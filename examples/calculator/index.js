@@ -1,3 +1,6 @@
+
+console.log( "This is a simple calculator language that looks at a file for basic math, and computes each line.")
+
 var i = require( "./calculator.bnf.js" ).interpreter;
 i.AddTokenEventByName( "expression", function( token ){
 	var left = i.SeekTokenByName( token, "number" ).text;

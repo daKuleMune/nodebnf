@@ -1,4 +1,4 @@
-var languageObject = require( "../../lib/parser.js" ).languageObject;
+var languageObject = require( "../../lib/parser.js" ).LanguageObject;
 var i = new languageObject( "calculator" );
 
 var r = i.syntaxObject;

@@ -1,0 +1,15 @@
+{
+  "name" : "bnf",
+  "description" : "BNF Compiler, parser, and interpreter framework.",
+  "url" : "http://github.com/navstev0/nodebnf",
+  "keywords" : ["parser", "interpreter", "compiler", "bnf", "lexical"],
+  "author" : "Steven Adams <steven@consultstevo.com>",
+  "repository": "git://github.com/navstev0/nodebnf.git",
+  "licenses" : ["OSL-3.0"],
+  "dependencies" : [],
+  "lib" : "lib",
+  "main" : "./lib/compiler.js",
+  "version" : "0.0.1alpha",
+  "directories" : { "lib":"./lib", "examples": "./examples" },
+  "engines" : { "node": ">= 0.4.11" }
+}
