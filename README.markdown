@@ -7,7 +7,10 @@ DESCRIPTION
 -----------
 
 NodeBNF is both a framework for an interpreter, and a language parser. It's using at the time a custom JavaScript markup which was molded after [BNF]( http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form).
-The parts it consist of:
+
+Parts
+-----
+
 - Language parser: Using a custom JavaScript markup the language parser converts scripts into a pre-interpreted collection of tokens, while at the same time checking for syntax correctness.
 - Interpreter framework: Every interpreter wants to be different, and should be, as no language compiles or understands tokens in the same way. The framework binds actions to the tokens, and then calls the actions, which is a basic parsing style. The framework try's to speed this process up by putting the tokens in a tree shaped data pool.
 
