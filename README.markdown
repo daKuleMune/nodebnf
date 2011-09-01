@@ -25,7 +25,6 @@ Road Map
 TODO
 ----
 
-- There can be a faster way to search or in character data by grouping letters A-Z = 60-90 >< compare rather then is x sizeof
 - The OR operation should set the syntax into groups so as only process each syntax layer once.
 
 License

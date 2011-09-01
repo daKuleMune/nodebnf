@@ -13,7 +13,7 @@ i.AddRule( "digit" );
 i.AddRule( "digits" );
 i.IndexTokenIdList();
 
-i.WriteRule( "rule", i.Or( r.expression, i.And( r.expression, r.nextLine, r.rule ) ) );
+i.WriteRule( "syntax", i.Or( r.expression, i.And( r.expression, r.nextLine, r.syntax ) ) );
 i.WriteRule( "expression", i.And( r.number, r.type, r.number ) );
 i.WriteRule( "number", i.Or( r.posNumber, r.negNumber ) );
 i.WriteRule( "posNumber", r.digits );
