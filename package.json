@@ -9,7 +9,7 @@
   "dependencies" : [],
   "lib" : "lib",
   "main" : "./lib/compiler.js",
-  "version" : "0.0.1alpha",
+  "version" : "0.0.8beta",
   "directories" : { "lib":"./lib", "examples": "./examples" },
   "engines" : { "node": ">= 0.4.11" }
 }
