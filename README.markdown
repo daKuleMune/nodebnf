@@ -22,6 +22,30 @@ Road Map
 - Parsing text will be able to be done with regular expressions.
 - The OR operation should set the syntax into groups so as only process each syntax layer only once.
 
+Example of Use
+--------------
+
+### Install:
+
+    npm install bnf
+
+### Basic setup and usage:
+
+    var Compiler = requre( "bnf" );
+    var scriptText = "rule";
+    var events = { "rule":function( token ){ console.log( "found rule" ); } };
+    var parser = null;
+    var script = null;
+    var compiler = new Compiler( );
+    compiler.CompileScript( "./languagefile.bnf", "cacheid", function( interpreter ){
+        parser = compiler.CreateParser( interpreter, events );
+        script = parser.ParseScriptString(scriptText);
+    } );
+    
+### See examples:
+
+- [Calculator](https://github.com/navstev0/nodebnf/tree/master/examples/calculator)
+
 License
 -------
 [OSL-3.0](http://www.opensource.org/licenses/OSL-3.0)
