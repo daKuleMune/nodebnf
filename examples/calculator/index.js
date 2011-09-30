@@ -1,21 +1,21 @@
 
-console.log( "This is a simple calculator language that looks at a file for basic math, and computes each line.")
+console.log( "This is a simple calculator language that looks at a file for basic math, and computes each line.");
 
-var i = require( "./calculator.bnf.js" ).interpreter;
-i.AddTokenEventByName( "expression", function( token ){
-	var left = i.SeekTokenByName( token, "number" ).text;
-	var type = i.SeekTokenByName( token, "type" ).text;
-	var right = i.SeekTokenByName( token, "number" ).text;
+var events = { "expression":function( token ){
+	var left = this.SeekNext( "number" ).text;
+	var type = this.SeekNext( "type" ).text;
+	var right = this.SeekNext( "number" ).text;
 	
 	//Equate
 	var equate = -1;
 	eval( "equate = " + left + type + right + ";" );
 	console.log( "File found syntax " + equate );
+} };
+
+var parser = null;
+var Compiler = require('../../lib/compiler.js').Compiler;
+var compiler = new Compiler();
+compiler.CompileScript( __dirname + "/calc.bnf", "doq", function( interpreter ){
+	var parser = compiler.CreateParser( interpreter, events );
+	parser.ParseScript( __dirname + "/calc.calc" );
 } );
-
-var parserObject = require( "../../lib/parser.js" ).parser;
-var parser = new parserObject( i );
-
-parser.ParseScript( "calc.calc" );
-
-//var interpreter = new require( "./parser.js" ).languageScript( "calc.bnf" );
