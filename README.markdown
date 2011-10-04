@@ -42,9 +42,18 @@ Example of Use
         script = parser.ParseScriptString(scriptText);
     } );
     
+### Multiple scripting language in one script:
+
+    parser = compiler.CreateParser( interpreter, events );
+    parser.IncludeLanguage( anotherParser );
+    
+    <bnf>
+    <syntax> ::= <myscript> #otherScript | <myscript>
+    
 ### See examples:
 
 - [Calculator](https://github.com/navstev0/nodebnf/tree/master/examples/calculator)
+- [Multi-Script](https://github.com/navstev0/nodebnf/tree/master/examples/multi-script)
 
 License
 -------

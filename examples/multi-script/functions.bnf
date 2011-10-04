@@ -1,0 +1,2 @@
+<syntax> ::= "?" <function>
+<function> ::= <_text> "." <_text> "(" <_owsp> ")" | <_text> "(" <_owsp> ")"
