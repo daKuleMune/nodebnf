@@ -1,4 +1,0 @@
-<syntax> ::= <expression> | <expression> <_crlf> <syntax>
-<expression> ::= <number> <type> <number>
-<number> ::= <_digits>
-<type> ::= "+" | "-" | "*" | "/"

@@ -1,0 +1,6 @@
+; Enhanced calculator by adding in two scripts.
+; calculator bnf
+<SYNTAX> ::= <expression> *( <CRLF> <expression> )
+  <expression> ::= <compisition> <OWSP> <type> <OWSP> <compisition>
+    <compisition> ::= #function | <NUMBER> ; other parsers are called via #
+      <type> ::= "+" | "-" | '*' | "/"

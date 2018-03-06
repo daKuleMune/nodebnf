@@ -1,5 +1,0 @@
-<syntax> ::= <expression> | <expression> <_crlf> <syntax>
-<expression> ::= <number> <type> <number> <func>
-<func> ::= "" | #func
-<number> ::= <_digits>
-<type> ::= "+" | "-" | "*" | "/"

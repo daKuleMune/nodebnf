@@ -1,26 +1,38 @@
+//Import compiler//
+const { Compiler } = require( "../../Compiler" );
 
-console.log( "This is a simple calculator language, but it adds in another language for function output.");
+//Load bnf file, this can be done inline//
+let bnf = require( "fs" ).readFileSync( __dirname + "/calculator.bnf" ).toString();
+let functionBnf = require( "fs" ).readFileSync( __dirname + "/function.abnf" ).toString();
 
-var events = { "expression":function( token ){
-	var left = this.SeekNext( "number" ).text;
-	var type = this.SeekNext( "type" ).text;
-	var right = this.SeekNext( "number" ).text;
-	
-	//Equate
-	var equate = -1;
-	eval( "equate = " + left + type + right + ";" );
-	console.log( "File found expression: " + equate );
-} };
+//Instance a BNF compiler//
+let compiler = new Compiler();
 
-var parser = null;
-var Compiler = require('../../lib/compiler.js').Compiler;
-var compiler = new Compiler();
+//Add new language for the bnf//
+compiler.AddLanguage( bnf, "calc" );
+compiler.AddLanguage( functionBnf, "function" );
 
-compiler.CompileScript( __dirname + "/functions.bnf", "func", function( interpreter ){
-	var fparser = compiler.CreateParser( interpreter, { "function":function( token ){ console.log( token.text + " found in function." ); } } );
-	compiler.CompileScript( __dirname + "/calc.bnf", "calc", function( interpreter ){
-		var parser = compiler.CreateParser( interpreter, events );
-		parser.IncludeLanguage( fparser );
-		parser.ParseScript( __dirname + "/calc.calc" );
-	} );
-} );
+//Set the execute rules
+compiler.SetRuleEvents({
+  mathLibAction( token ){
+    token.SetValue( "Math." );
+  },
+  expression( token, dataObject ){
+    dataObject.calculations.push( { question : token.value, answer : eval( token.value ) } );
+  }
+});
+
+//Set up data storage for parser//
+let parserSavedData = {
+  calculations : []
+};
+
+//Parse the script
+compiler.ParseScript( `
+1 + PI
+193 - 1233
+4.32 * 24
+`.trim(), parserSavedData );
+
+//Review data saved during parser step//
+console.log( parserSavedData.calculations );

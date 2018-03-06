@@ -1,0 +1,4 @@
+; Calculator example.
+<SYNTAX> ::= <expression> | <expression> <CRLF> <SYNTAX>
+  <expression> ::= <NUMBER> <OWSP> <type> <OWSP> <NUMBER>
+    <type> ::= "+" | "-" | '*' | "/"

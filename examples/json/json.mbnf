@@ -1,0 +1,7 @@
+; json syntax bnf showing melding between abnf and bnf for support of custmizable syntax.
+SYNTAX = <jsonObject> / <jsonArray>
+  <jsonObject> ::= "{" <ANYWSP> [ <jsonProperty> <ANYWSP> *( "," <ANYWSP> <jsonProperty> <ANYWSP> ) ] <ANYWSP> "}"
+    <jsonProperty> ::= <jsonPropertyName> <ANYWSP> ":" <ANYWSP> <jsonType>
+      <jsonPropertyName> ::= <QLITERAL>
+  <jsonArray> ::= "[" ANYWSP [ <jsonType> <ANYWSP> *( "," <ANYWSP> <jsonType> <ANYWSP> ) ] <ANYWSP> "]"
+  jsonType = <jsonObject> | <jsonArray> / <NUMBER> | <QLITERAL>

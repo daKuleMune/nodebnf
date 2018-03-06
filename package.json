@@ -5,10 +5,8 @@
   "keywords" : ["parser", "interpreter", "compiler", "bnf", "lexical"],
   "author" : "Steven Adams <steven@consultstevo.com>",
   "repository": "git://github.com/navstev0/nodebnf.git",
-  "licenses" : ["OSL-3.0"],
+  "license": "GPL-3.0",
   "dependencies" : [],
-  "lib" : "lib",
   "main" : "./lib/compiler.js",
-  "version" : "0.1.2",
-  "directories" : { "lib":"./lib", "examples": "./examples" }
+  "version" : "1.0.0"
 }

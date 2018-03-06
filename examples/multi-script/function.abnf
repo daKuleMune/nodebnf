@@ -1,0 +1,9 @@
+; Enhanced calculator by adding in two scripts.
+; functions abnf, showing abnf support.
+SYNTAX = mathLibAction
+  mathLibAction = mathMethod / mathProperty
+    mathProperty = methodName
+    mathMethod = methodName "(" OWSP *methodArgs OWSP ")"
+      methodArgs = methodArg *( OWSP "," OWSP methodArg )
+        methodArg = LITERAL / NUMBER
+    methodName = ( ALPHA / "_" ) *( ALPHA / DIGIT / "_" )
