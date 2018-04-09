@@ -7,6 +7,6 @@
   "repository": "git://github.com/navstev0/nodebnf.git",
   "license": "GPL-3.0",
   "dependencies" : [],
-  "main" : "./lib/compiler.js",
+  "main" : "./Compiler.js",
   "version" : "1.0.0"
 }
