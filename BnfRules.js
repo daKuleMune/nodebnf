@@ -186,7 +186,7 @@ exports.bnfRules = {
   //DO BE REMOVED IN THIS MAJOR VERSION! DO NOT USE!
   AQEANYCHAR( token ){
     return token.Or( [
-      token.Rule( "ESAQUOTE" ),
+      token.Rule( "ESCAQUOTE" ),
       token.Rule( "ANYCHAR" ),
       token.Rule( "SQUOTE" ),
       token.Rule( "QUOTE" ),
@@ -206,7 +206,7 @@ exports.bnfRules = {
       rule : ( t ) =>
         t.Grammar( "GROUP", ( t1 ) =>
           t1.Or( [
-            t1.Rule( "ESAQUOTE" ),
+            t1.Rule( "ESCAQUOTE" ),
             t1.Rule( "ANYCHAR" ),
             t1.Rule( "SQUOTE" ),
             t1.Rule( "QUOTE" ),
